@@ -1,0 +1,12 @@
+sqlalchemy-iris
+langchain-iris
+testcontainers-iris
+llama-iris
+sentence-transformers
+langchain
+fastembed 
+openai 
+tiktoken
+python-dotenv
+pandas
+ipykernel
