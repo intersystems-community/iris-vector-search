@@ -11,11 +11,14 @@
     docker run -d --name iris-comm -p 1972:1972 -p 52773:52773 -e IRIS_PASSWORD=demo -e IRIS_USERNAME=demo intersystemsdc/iris-community:2024.1-preview
     ```
     - Access the System Management Portal via http://localhost:52773/csp/sys/UtilHome.csp
-3. Create a python environment (conda, venv or however you wish) For example:
+3. Create a python environment and activate it (conda, venv or however you wish) For example:
     
     ```
     conda create --name treehacks-iris python=3.10
     ``` 
+    ```
+    conda activate
+    ```
 
 4. Install packages for all demos:
     ```
