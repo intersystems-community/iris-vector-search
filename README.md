@@ -30,7 +30,7 @@
 ## Basic Demos
 
 ### [sql_demo.ipynb](demo/sql_demo.ipynb)
-IRIS SQL now supports vector search (with filters)! In this demo, we're searching a whiskey dataset for whiskeys that are priced < $100 and have a taste description similar to "earthy and creamy taste".
+IRIS SQL now supports vector search (with other columns)! In this demo, we're searching a whiskey dataset for whiskeys that are priced < $100 and have a taste description similar to "earthy and creamy taste".
 
 ### [langchain_demo.ipynb](demo/langchain_demo.ipynb)
 IRIS now has a langchain integration as a VectorDB! In this demo, we use the langchain framework with IRIS to ingest and search through a document. 

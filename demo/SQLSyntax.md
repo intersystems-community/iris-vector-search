@@ -1,6 +1,8 @@
 
 # Using Vectors in IRIS SQL
 
+### Note: Please refer to the internal confluence page for updated docs.
+
 ## VECTOR (type, length)
 **Optional parameters:**
 
