@@ -3,7 +3,7 @@
 
 1. Clone the repo
     ```
-    https://github.com/alvin-isc/iris-vector-search
+    https://github.com/intersystems-community/iris-vector-search/
     ```
    
 2. Install IRIS (Community Edtion) in a container:
