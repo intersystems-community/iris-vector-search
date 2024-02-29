@@ -14,7 +14,7 @@
 3. Create a python environment and activate it (conda, venv or however you wish) For example:
     
     ```
-    conda create --name treehacks-iris python=3.10
+    conda create --name iris-vector-search python=3.10
     ``` 
     ```
     conda activate
