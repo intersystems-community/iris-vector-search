@@ -1,7 +1,7 @@
 
 # Using Vectors in IRIS SQL
 
-### Note: Please refer to the internal confluence page for updated docs.
+:alert: Please refer to the [full product documentation](https://docs.intersystems.com/iris20241/csp/docbook/Doc.View.cls?KEY=GSQL_vecsearch) for the full syntax and instructions. This page is for offline reference only.
 
 ## VECTOR (type, length)
 **Optional parameters:**
