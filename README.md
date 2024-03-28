@@ -12,6 +12,24 @@ This repository offers code samples to get you started with the new features, an
     git clone https://github.com/intersystems-community/iris-vector-search.git
     ```
    
+
+### Using a Jupyter container
+
+If you prefer just running the demos from your local Python environment, skip to [Using your local Python environment](#using-your-local-python-environment).
+
+
+2. For [`langchain_demo.ipynb`](demo/langchain_demo.ipynb) and [`llama_demo.ipynb`](demo/llama_demo.ipynb), you need an [OpenAI API Key](https://platform.openai.com/api-keys). Update the corresponding entry in `docker-compose.yml`:
+    ```
+      OPENAI_API_KEY: xxxxxxxxx
+    ```
+
+3. Start the Docker containers (one for IRIS, one for Jupyter):
+    ```Shell
+    docker-compose up
+    ```
+
+### Using your local Python environment 
+
 2. Install IRIS Community Edtion in a container:
     ```Shell
     docker run -d --name iris-comm -p 1972:1972 -p 52773:52773 -e IRIS_PASSWORD=demo -e IRIS_USERNAME=demo intersystemsdc/iris-community:latest
@@ -35,14 +53,13 @@ This repository offers code samples to get you started with the new features, an
     OPENAI_API_KEY=xxxxxxxxx
     ```
     
-## Basic Demos
-
-The demos in this repository are formatted as Jupyter notebooks. To run them, just start Jupyter and navigate to the `/demo/` folder:
+6. The demos in this repository are formatted as Jupyter notebooks. To run them, just start Jupyter and navigate to the `/demo/` folder:
 
     ```Shell
     jupyter lab
     ```
 
+## Basic Demos
 
 ### [sql_demo.ipynb](demo/sql_demo.ipynb)
 
