@@ -10,3 +10,4 @@ tiktoken
 python-dotenv
 pandas
 ipykernel
+setuptools
