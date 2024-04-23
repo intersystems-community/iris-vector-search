@@ -1,7 +1,7 @@
 FROM jupyter/base-notebook
 
 COPY demo "${HOME}/demo"
-COPY data "${HOME}/data"
+COPY data "${HOME}/data
 COPY requirements.txt "${HOME}"
 
 RUN pip install -r requirements.txt
