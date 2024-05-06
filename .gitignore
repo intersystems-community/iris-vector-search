@@ -1,4 +1,5 @@
 .env
 .DS_STORE
 /demo/.DS_STORE
+/demo/.ipynb_checkpoints
 /external/.DS_STORE
