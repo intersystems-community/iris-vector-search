@@ -13,5 +13,9 @@ RUN pip install /tmp/lib/intersystems_irispython-5.0.0-6545-cp36.cp37.cp38.cp39.
 COPY SSLConfigs.ini "/usr/cert-demo/"
 ENV ISC_SSLconfigurations="/usr/cert-demo/SSLConfigs.ini"
 
+USER root
+RUN chown -R jovyan "${HOME}/demo" /usr/cert-demo/
+USER jovyan
+
 # run without password
 CMD start.sh jupyter lab --LabApp.token=''
