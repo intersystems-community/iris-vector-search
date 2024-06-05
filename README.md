@@ -2,7 +2,7 @@
 
 With the 2024.1 release, we're adding a powerful [Vector Search capability to the InterSystems IRIS Data Platform](https://www.intersystems.com/news/iris-vector-search-support-ai-applications/), to help you innovate faster and build intelligent applications powered by Generative AI. At the center of the new capability is a new [`VECTOR` native datatype](https://docs.intersystems.com/iris20241/csp/docbook/DocBook.UI.Page.cls?KEY=RSQL_datatype#RSQL_datatype_vector) for IRIS SQL, along with [similarity functions](https://docs.intersystems.com/iris20241/csp/docbook/Doc.View.cls?KEY=GSQL_vecsearch) that leverage optimized chipset instructions (SIMD).
 
-As of Global Summit (June 9), the Vector Search capability is also available with [InterSystems IRIS Cloud SQL](https://developer.intersystems.com/products/iris-cloud-sql-integratedml/). Check out [`cloud_sql_demo.ipynb`](demo/cloud_sql_demo.ipynb) for instructions on setting up a connection from your Jupyter notebook.
+The same Vector Search capability is now also available with [InterSystems IRIS Cloud SQL](https://developer.intersystems.com/products/iris-cloud-sql-integratedml/). Check out [`cloud_sql_demo.ipynb`](demo/cloud_sql_demo.ipynb) for instructions on setting up a connection from your Jupyter notebook. The notebooks exploring langchain and llama-index also support connecting to Cloud SQL deployments.
 
 This repository offers code samples to get you started with the new features, and we'll continue to add more, but encourage you to let us know about your own experiments on the [InterSystems Developer Community](https://community.intersystems.com). At the bottom of this page, you'll find links to a few demo repositories we liked a lot!
 
@@ -29,6 +29,8 @@ If you prefer just running the demos from your local Python environment, skip to
     ```Shell
     docker-compose up
     ```
+
+    Please note that building the container involves downloading the `sentence_transformers` module, which measures over 2GB!
 
 ### Using your local Python environment 
 
@@ -77,7 +79,7 @@ IRIS now has a llama_index integration as a VectorDB! In this demo, we use the l
 
 ### [cloud_sql_demo.ipynb](demo/cloud_sql_demo.ipynb)
 
-This notebook describes how to tap into the Vector Search capability when using [InterSystems IRIS Cloud SQL](https://developer.intersystems.com/products/iris-cloud-sql-integratedml/) instead of a local install or container. It covers the additional settings for establishing a secure connection to a Cloud SQL deployment for all three of the above base demoes.
+This notebook describes how to tap into the Vector Search capability when using [InterSystems IRIS Cloud SQL](https://developer.intersystems.com/products/iris-cloud-sql-integratedml/) instead of a local install or container. It covers the additional settings for establishing a secure connection to a Cloud SQL deployment.
 
 
 ## Which to use?
