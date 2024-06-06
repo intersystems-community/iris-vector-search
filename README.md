@@ -44,7 +44,7 @@ If you prefer just running the demos from your local Python environment, skip to
     
     ```Shell
     conda create --name iris-vector-search python=3.10
-    conda activate
+    conda activate iris-vector-search
     ```
 
 4. Install packages for all demos:
