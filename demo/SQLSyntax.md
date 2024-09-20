@@ -65,6 +65,7 @@ CREATE INDEX HNSWIndex ON TABLE Company.People (Biography)
 
 CREATE INDEX HNSWIndex ON TABLE Company.People (Biography)
   AS %SQL.VectorIndex.HNSW(M=72, efConstruct=100, Distance='Cosine')
+```
 
 ## SQL Functions
 
