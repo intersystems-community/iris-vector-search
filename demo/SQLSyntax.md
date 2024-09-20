@@ -26,6 +26,46 @@ This query will succeed following any of the above three table creations. It wil
 SELECT * FROM Test.Demo
 ```
 
+## Vector Index
+
+**Note**: This feature is available only for InterSystems IRIS 2024.3 and later versions, and as of 18 Sep 2024 kits were posted to the Early Access Program site [http://www.intersystems.com/early-access-program](http://www.intersystems.com/early-access-program).
+
+After storing data in InterSystems IRIS in the VECTOR type, you may define a vector index (also called an approximate nearest neighbor index or an ANN index) to improve the efficiency of searches issued against your stored vectors.
+
+In a standard vector search, comparisons against an input vector must be made against every individual vector in the database. While this approach guarantees that your searches are completely accurate, it is computationally inefficient. A vector index leverages nearest neighbor algorithms to store the vectors in a sorted data structure that limits the number of comparison operations performed between an input vector and the stored vectors. As a result, when a search is performed, the system does not make comparisons with each stored vector but instead uses the sorted data structure to eliminate vectors that are not close to the input vector. This approach dramatically improves the performance of searches on a vector database, particularly when dealing with large amounts of high-dimensional data.
+
+> **Note:** Queries that use a vector index currently do not support parallelization.
+
+As with standard indexes, the query optimizer may decide that the most efficient query plan does not use the vector index you have defined. To see if a query uses the vector index, examine the query plan with the `EXPLAIN` command.
+
+### Hierarchical Navigable Small World Index
+
+InterSystems SQL allows you to define a Hierarchical Navigable Small World (HNSW) index, which uses the HNSW algorithm to create a vector index.
+
+You can define an HNSW index using a `CREATE INDEX` statement. To define an HNSW index, the following requirements must be met:
+
+- The HNSW index is defined on a VECTOR-typed field with a fixed length that is of type `double` or `decimal`.
+- The table the index is defined on must have IDs that are bitmap-supported.
+- The table the index is defined on must use default storage.
+
+There are three parameters you can specify when defining an HNSW index:
+
+1. **Distance** (required): The distance function used by the index, surrounded by quotes (`''`). There are two possible values: `Cosine` and `DotProduct`. This parameter is case-insensitive.
+2. **M** (optional): The number of bi-directional links created for every new element during construction. This value should be a positive integer larger than 1; the value will fall between 2–100. Higher M values work better on datasets with high dimensionality or recall, while lower M values work better with low dimensionality or recall. The default value is 64.
+3. **efConstruct** (optional): The size of the dynamic list for the nearest neighbors. This value should be a positive integer larger than M. Larger `efConstruct` values generally lead to better index quality but longer construction time. There is a maximum value past which `efConstruct` does not improve the quality of the index. The default value is 64.
+
+#### Examples of defining HNSW indexes with various parameter values:
+
+```sql
+CREATE INDEX HNSWIndex ON TABLE Company.People (Biography)
+  AS %SQL.VectorIndex.HNSW(Distance='Cosine')
+
+CREATE INDEX HNSWIndex ON TABLE Company.People (Biography)
+  AS %SQL.VectorIndex.HNSW(M=80, Distance='DotProduct')
+
+CREATE INDEX HNSWIndex ON TABLE Company.People (Biography)
+  AS %SQL.VectorIndex.HNSW(M=72, efConstruct=100, Distance='Cosine')
+```
 
 ## SQL Functions
 
