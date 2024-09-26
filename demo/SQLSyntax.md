@@ -58,13 +58,13 @@ There are three parameters you can specify when defining an HNSW index:
 
 ```sql
 CREATE INDEX HNSWIndex ON TABLE Company.People (Biography)
-  AS %SQL.VectorIndex.HNSW(Distance='Cosine')
+  AS %SQL.Index.HNSW(Distance='Cosine')
 
 CREATE INDEX HNSWIndex ON TABLE Company.People (Biography)
-  AS %SQL.VectorIndex.HNSW(M=80, Distance='DotProduct')
+  AS %SQL.Index.HNSW(M=80, Distance='DotProduct')
 
 CREATE INDEX HNSWIndex ON TABLE Company.People (Biography)
-  AS %SQL.VectorIndex.HNSW(M=72, efConstruct=100, Distance='Cosine')
+  AS %SQL.Index.HNSW(M=72, efConstruct=100, Distance='Cosine')
 ```
 
 ## SQL Functions
