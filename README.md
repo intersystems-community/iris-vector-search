@@ -95,6 +95,9 @@ Feel free to contact Alvin / Thomas or file an issue in this GitHub repository i
 
 ## More Demos / References:
 
+### [Voice-controlled shopping cart](https://github.com/intersystems-dach/RAG-demo)
+Neat shopping cart demo that leverages Vector Search to match your voice-recorded order to available items.
+
 ### [NLP Queries on  Youtube Audio Transcription](https://github.com/jrpereirajr/intersystems-iris-notebooks/blob/main/vector/langchain-iris/nlp_queries_on_youtube_audio_transcription_dataset.ipynb)
 Uses langchain-iris to search Youtube Audio transcriptions
 
