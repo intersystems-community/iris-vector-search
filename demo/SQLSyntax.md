@@ -28,7 +28,7 @@ SELECT * FROM Test.Demo
 
 ## Vector Index
 
-**Note**: This feature is available only for InterSystems IRIS 2024.3 and later versions, and as of 18 Sep 2024 kits were posted to the Early Access Program site [http://www.intersystems.com/early-access-program](http://www.intersystems.com/early-access-program).
+**Note**: This feature is available only for InterSystems IRIS 2025.1 and later versions. Please join the [Early Access Program](https://live.evaluation.iscinternal.com/download/adminearlyaccess.csp?earlyAccessProgram=Vector_Search) if you'd like access to a preview kit.
 
 After storing data in InterSystems IRIS in the VECTOR type, you may define a vector index (also called an approximate nearest neighbor index or an ANN index) to improve the efficiency of searches issued against your stored vectors.
 
