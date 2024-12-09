@@ -1,4 +1,3 @@
-version: '3.6'
 services:
   iris:
     image: intersystemsdc/iris-community:latest
