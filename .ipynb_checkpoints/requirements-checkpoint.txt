@@ -4,7 +4,6 @@ testcontainers-iris
 llama-index-embeddings-langchain
 llama-iris
 llama-index
-llama-index-embeddings-langchain
 sentence-transformers
 langchain
 fastembed 
