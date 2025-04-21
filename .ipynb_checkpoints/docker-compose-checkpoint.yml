@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      OPENAI_API_KEY: sk-N84wsFAuOZNbYfq853q6D1XJCibzRfnjYk5txC700vT3BlbkFJRktCqqeKcDyKYvoxr07rEbcZ4D_o9IqkBHZ9ECRm8A
+      OPENAI_API_KEY: PUT--YOUR--KEY--HERE
       IRIS_HOSTNAME: iris
     restart: always
     hostname: jupyter
