@@ -1,6 +1,6 @@
 services:
   iris:
-    image: intersystemsdc/iris-community:latest-cd-zpm
+    image: intersystemsdc/iris-community:latest
     environment:
       IRIS_USERNAME: demo
       IRIS_PASSWORD: demo

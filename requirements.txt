@@ -1,10 +1,9 @@
 sqlalchemy-iris
 langchain-iris
 testcontainers-iris
-llama-index-embeddings-langchain
+langchain-openai
 llama-iris
-llama-index
-llama-index-embeddings-langchain
+llama-index<0.11
 sentence-transformers
 langchain
 fastembed 

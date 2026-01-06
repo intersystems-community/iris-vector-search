@@ -2,7 +2,16 @@
 
 We've added a powerful [Vector Search capability to the InterSystems IRIS Data Platform](https://www.intersystems.com/news/iris-vector-search-support-ai-applications/), to help you innovate faster and build intelligent applications powered by Generative AI. At the center of the new capability is a new [`VECTOR` native datatype](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=RSQL_datatype&ADJUST=1) for IRIS SQL, along with [similarity functions](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GSQL_vecsearch&ADJUST=1) that leverage optimized chipset instructions (SIMD).
 
-**InterSystems IRIS 2025.1** introduces key performance improvements and bug fixes, along with a powerful new feature: a **disk-based Approximate Nearest Neighbors (ANN) index** for fast vector search.This new indexing method significantly improves search performance on large vector datasets (typically over 100K vectors), making IRIS even more effective for AI and ML workloads.See [the docs](https://docs.intersystems.com/iris20251/csp/docbook/DocBook.UI.Page.cls?KEY=GSQL_vecsearch#GSQL_vecsearch_index) for more information on how to define and use the index.
+**InterSystems IRIS 2025.3** continues to improve vector search performance through enhancements to the internal layout of the disk-based **Approximate Nearest Neighbour (ANN)** index. ANN indexing significantly improves search performance on large vector datasets (typically over 100K vectors), making IRIS even more effective for AI and ML workloads.See [the docs](https://docs.intersystems.com/iris20253/csp/docbook/DocBook.UI.Page.cls?KEY=GSQL_vecsearch#GSQL_vecsearch_index) for more information on how to define and use the index.
+
+In **InterSystems IRIS 2025.3**, the ANN index has been enhanced with the following improvements:
+
+- More efficient duplicate entry management
+- Reduced query-time overhead
+- Up to ~10% improvements in throughput and latency, depending on workload characteristics
+
+The updated ANN index format is applied automatically when an index is rebuilt. Rebuilding is not required for continued operation — the runtime is fully backwards compatible and can read and write both legacy and updated ANN index formats.
+
 
 The same Vector Search capability is now also available with [InterSystems IRIS Cloud SQL](https://developer.intersystems.com/products/iris-cloud-sql-integratedml/). Check out [`cloud_sql_demo.ipynb`](demo/cloud_sql_demo.ipynb) for instructions on setting up a connection from your Jupyter notebook. The notebooks exploring langchain and llama-index also support connecting to Cloud SQL deployments.
 
