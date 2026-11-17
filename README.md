@@ -2,13 +2,7 @@
 
 We've added a powerful [Vector Search capability to the InterSystems IRIS Data Platform](https://www.intersystems.com/news/iris-vector-search-support-ai-applications/), to help you innovate faster and build intelligent applications powered by Generative AI. At the center of the new capability is a new [`VECTOR` native datatype](https://docs.intersystems.com/iris20262/csp/docbook/DocBook.UI.Page.cls?KEY=RSQL_datatype&ADJUST=1) for IRIS SQL, along with [similarity functions](https://docs.intersystems.com/iris20262/csp/docbook/DocBook.UI.Page.cls?KEY=GSQL_vecsearch&ADJUST=1) that leverage optimized chipset instructions (SIMD).
 
-**InterSystems IRIS 2026.2** introduces the **`EMBEDDING` native datatype**, which automatically converts text fields to vectors at insert time using configured embedding models — no external preprocessing step needed. Models are registered in the new `%Embedding.Config` table, with built-in support for OpenAI (`%Embedding.OpenAI`) and SentenceTransformers (`%Embedding.SentenceTransformers`). This release also improves performance of vector embedding generation and storage during large data loads. See [the docs](https://docs.intersystems.com/iris20262/csp/docbook/DocBook.UI.Page.cls?KEY=GSQL_vecsearch) for more details.
-
-The **HNSW (Hierarchical Navigable Small World)** index for Approximate Nearest Neighbour (ANN) search now supports explicit tuning parameters:
-
-- `M` — number of bi-directional links per element (default: 16, range: 2–100)
-- `efConstruction` — dynamic candidate list size during index build (default: 64)
-- `Distance` — similarity metric: `'Cosine'` or `'DotProduct'`
+**InterSystems IRIS 2026.2** improves performance of vector embedding generation and storage during large data loads. See [the docs](https://docs.intersystems.com/iris20262/csp/docbook/DocBook.UI.Page.cls?KEY=GSQL_vecsearch) for more details.
 
 **InterSystems IRIS 2025.3** introduced enhancements to the internal layout of the disk-based ANN index, significantly improving search performance on large vector datasets (typically over 100K vectors):
 
@@ -86,7 +80,7 @@ If you prefer just running the demos from your local Python environment, skip to
 
 IRIS SQL now supports vector search (with other columns)! In this demo, we're searching a whiskey dataset for whiskeys that are priced < $100 and have a taste description similar to "earthy and creamy taste".
 
-With IRIS 2026.2, you can also use the new `EMBEDDING` datatype and `EMBEDDING()` SQL function to let IRIS handle text-to-vector conversion automatically, without pre-computing embeddings in Python.
+Use the `EMBEDDING` datatype and `EMBEDDING()` SQL function to let IRIS handle text-to-vector conversion automatically, without pre-computing embeddings in Python.
 
 ### [langchain_demo.ipynb](demo/langchain_demo.ipynb)
 
